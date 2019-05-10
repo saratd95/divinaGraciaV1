@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/contPpal"
+    tools:context=".ResultadosV1">
+
+    <ScrollView
+        android:id="@+id/pantalla"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="#FFFFFF">
+
+            <LinearLayout
+                android:id="@+id/encabezado"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="#F4EEE6">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/titulo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ACCESORIOS PENSADOS PARA TI"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorVinoT"
+                        app:fontFamily="@font/alegreya"
+                        android:textStyle="bold"
+                        android:textSize="9.5pt"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="8dp"/>
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo de Rostro"
+                    android:alpha="0.4"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tipo de Rostro"
+                    android:textColor="@color/colorVinoT"/>
+                <LinearLayout
+                    android:id="@+id/lineaSeparador"
+                    android:layout_width="220dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorVinoT"
+                    android:orientation="vertical">
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/areaBotonesSup"
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:id="@+id/areaBotoneIzq"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_height="56dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="Momento del Día"
+                            android:alpha="0.4"
+                            android:layout_marginBottom="5dp"/>
+                        <Button
+                            android:id="@+id/btnMomento"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ffffff"
+                            android:background="@drawable/boton_verde_oscuro"
+                            android:text="día"
+                            android:layout_marginBottom="10dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/areaBotoneDer"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginStart="20dp"
+                        android:layout_height="56dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="Ocasión"
+                            android:alpha="0.4"
+                            android:layout_marginBottom="5dp"/>
+                        <Button
+                            android:id="@+id/btnOcasion"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:textColor="#ffffff"
+                            android:background="@drawable/boton_verde_oscuro"
+                            android:text="formal"
+                            android:layout_marginBottom="10dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cajasResultados"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/fotoProducto"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/mujer_pantalla_ppal"/>
+                <TextView
+                    android:id="@+id/nombreProducto"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:text="nombre producto"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

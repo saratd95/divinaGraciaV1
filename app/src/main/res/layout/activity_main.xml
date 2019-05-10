@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/contPpal"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/pantalla"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_margin="20dp">
+
+            <ImageView
+                android:id="@+id/logoPpal"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="0dp"
+                android:padding="10dp"
+                app:srcCompat="@drawable/logo_ppal" />
+            <ImageView
+                android:id="@+id/imgMujer"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="60dp"
+                app:srcCompat="@drawable/ilust_index" />
+
+            <LinearLayout
+                android:id="@+id/areaBotones"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="40dp">
+                <Button
+                    android:id="@+id/btnConocer"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/boton_verde_oscuro"
+                    android:textColor="#FFFFFF"
+                    android:text="CONOCER"/>
+                <Button
+                    android:id="@+id/btnEmpezar"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/boton_vinot"
+                    android:textColor="#FFFFFF"
+                    android:text="EMPEZAR"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

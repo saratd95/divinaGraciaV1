@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">DivinaGraciaV1</string>
+    <string name="descDudaDos">Puedes seleccionar las dos figuras que más se parezcan a tu cara,
+        selecciona primero una y luego oprime el botón con el signo “+” para seleccionar una figura adicional.  </string>
+    <string name="ayudaSub">This is an &lt;u>underline&lt;/u>.</string>
+</resources>

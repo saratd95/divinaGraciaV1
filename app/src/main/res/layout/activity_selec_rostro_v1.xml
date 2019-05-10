@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4EEE6"
+    android:id="@+id/contPpal"
+    tools:context=".SelecRostroV1">
+
+    <ScrollView
+        android:id="@+id/pantalla"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/encabezado"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/titulo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SELECCIONA TU TIPO  \nDE ROSTRO"
+                    android:textAlignment="center"
+                    android:textColor="#B9545C"
+                    app:fontFamily="@font/alegreya"
+                    android:textStyle="bold"
+                    android:textSize="9.5pt"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"/>
+                <LinearLayout
+                    android:id="@+id/lineaSeparador"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@color/colorVinoT"
+                    android:orientation="vertical">
+                </LinearLayout>
+                <Button
+                    android:id="@+id/btnCargarImg"
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/boton_vinot"
+                    android:text="CARGAR FOTO"
+                    android:textColor="#FFFFFF"
+                    android:onClick="onclickCargar"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/areaSeleccion"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="#FFFFFF"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/imagemId"
+                    android:layout_width="300dp"
+                    android:layout_height="300dp"
+                    android:src="@drawable/tu_imagen_se"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <!-- BOTONES INFERIORES -->
+    <!--poner 0dp en with y weight de 1 los distribuye equitativamente-->
+    <LinearLayout
+        android:id="@+id/areaMenuInf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/contPpal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnListo"
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/boton_verdeosc_borde"
+            android:text="LISTO"
+            android:textColor="@color/colorVerdeOsc" />
+
+        <LinearLayout
+            android:id="@+id/botonesInferiores"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/txtAyuda"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginStart="1dp"
+                android:textColor="@color/colorVinoT"
+                android:text="Ayuda" />
+
+            <TextView
+                android:id="@+id/txtCambiarFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_marginRight="1dp"
+                android:layout_marginEnd="1dp"
+                android:textColor="@color/colorVinoT"
+                android:text="Cambiar Foto" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
