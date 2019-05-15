@@ -63,10 +63,45 @@
                 <ImageView
                     android:id="@+id/imgMujer"
                     android:layout_width="match_parent"
-                    android:layout_height="370dp"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_height="250dp"
+                    android:layout_marginBottom="30dp"
                     app:srcCompat="@drawable/mujer_pantalla_ppal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#540721"
+                    app:fontFamily="@font/alegreya"
+                    android:text="Formas para cargar la imagen de tu rostro "
+                    android:textSize="19dp"
+                    android:textAlignment="center"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="15dp"
+                            android:textColor="@color/colorVerdeOsc"
+                            android:text="Tómate una foto con la cámara de tu dispositivo " />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="•	Ubica tu celular de forma horizontal
+•	Tu cara debe ocupar todo el alto de la pantalla"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/colorVerdeOsc"
+                    android:text="Carga una foto desde la galería de tu dispositivo " />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="•	Selecciona una foto en la que esté tu rostro grande"/>
+
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/areaBotones"
@@ -74,24 +109,16 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="30dp">
+
                 <Button
                     android:id="@+id/btnTomarFoto"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="@drawable/boton_vinot"
-                    android:textColor="#FFFFFF"
-                    android:text="TOMAR FOTO"
-                    android:onClick="tomarFoto"/>
-                <Button
-                    android:id="@+id/btnSelecFotoGal"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/boton_verde_oscuro"
-                    android:textColor="#FFFFFF"
-                    android:text="SELECCIONAR FOTO DE GALERIA" />
+                    android:onClick="tomarFoto"
+                    android:text="CONTINUAR"
+                    android:textColor="#FFFFFF" />
             </LinearLayout>
 
         </LinearLayout>

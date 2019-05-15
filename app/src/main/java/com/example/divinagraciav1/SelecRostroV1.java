@@ -18,7 +18,11 @@ import android.provider.Settings;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.FileProvider;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,7 +34,11 @@ import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.text.style.ForegroundColorSpan;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -63,6 +71,24 @@ public class SelecRostroV1 extends AppCompatActivity {
     ImageView imagen;
     String path;
 
+    /******************************
+     * PARA EL VIEW PAGER ROSTROS *
+     ******************************/
+    /**
+     * The {@link android.support.v4.view.PagerAdapter} that will provide
+     * fragments for each of the sections. We use a
+     * {@link FragmentPagerAdapter} derivative, which will keep every
+     * loaded fragment in memory. If this becomes too memory intensive, it
+     * may be best to switch to a
+     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
+     */
+    private SelecRostroV1.SectionsPagerAdapter mSectionsPagerAdapter;
+
+    /**
+     * The {@link ViewPager} that will host the section contents.
+     */
+    private ViewPager mViewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +109,7 @@ public class SelecRostroV1 extends AppCompatActivity {
         txt_ayuda = (TextView) findViewById(R.id.txtAyuda);
         txt_cambiarFoto=(TextView) findViewById(R.id.txtCambiarFoto);
         String text="Ayuda";
-        String text2="Cambiar Foto";
+        String text2="Guia de Rostros";
         SpannableString ss= new SpannableString(text);
         SpannableString ss2=new SpannableString(text2);
         ClickableSpan clickableSpan1= new ClickableSpan() {
@@ -101,7 +127,7 @@ public class SelecRostroV1 extends AppCompatActivity {
         ClickableSpan clickableSpan2= new ClickableSpan() { //Aqui se conf. lo que hara el btn de "CAMBIAR FOTO"
             @Override
             public void onClick(View widget) {
-                startActivity(new Intent(SelecRostroV1.this,PantallaPrincipal.class));
+                startActivity(new Intent(SelecRostroV1.this,GuiaRostros.class)); //era PantallaPrincipal
             }
             //metodo para cambiar los estilos, se cambia el color a vino tinto, por defento coloca rojo
             @Override
@@ -129,6 +155,20 @@ public class SelecRostroV1 extends AppCompatActivity {
         }else{
             botonCargar.setEnabled(false);
         }
+
+        /******************************
+         * PARA EL VIEW PAGER ROSTROS *
+         ******************************/
+        /** Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+         setSupportActionBar(toolbar);**/ //quite la barra superior
+        // Create the adapter that will return a fragment for each of the three
+        // primary sections of the activity.
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        //new SectionsPagerAdapter(getSupportFragmentManager())
+
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
 
     }//cierra OnCreate
 
@@ -291,11 +331,113 @@ public class SelecRostroV1 extends AppCompatActivity {
                     imagen.setImageBitmap(bitmap);
 
                     break;
+            }
+        }
+    }//cierra onActivityResult
 
+    /******************************
+     * PARA EL VIEW PAGER ROSTROS *
+     ******************************/
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_selec_rostro_v1, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        public PlaceholderFragment() {
+        }
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static SelecRostroV1.PlaceholderFragment newInstance(int sectionNumber) {
+            SelecRostroV1.PlaceholderFragment fragment = new SelecRostroV1.PlaceholderFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+
+            View rootView = inflater.inflate(R.layout.fragment_selec_rostro_v1, container, false);
+            //Llamar los campos del fragment_selec_rostro...
+            TextView mDescriptionTv = rootView.findViewById(R.id.descriptionTv);
+            ImageView mImageViewTv = rootView.findViewById(R.id.imageView);
+
+            //manejo de evento
+            if(getArguments().getInt(ARG_SECTION_NUMBER) == 1){
+                mDescriptionTv.setText("Rostro Redondo");
+                mImageViewTv.setImageResource(R.drawable.rostro_redo);
+            }
+            if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
+                mDescriptionTv.setText("Rostro Alargado");
+                mImageViewTv.setImageResource(R.drawable.rostro_alargado);
+            }
+            if(getArguments().getInt(ARG_SECTION_NUMBER) == 3){
+                mDescriptionTv.setText("Rostro Cuadrado");
+                mImageViewTv.setImageResource(R.drawable.rostro_cuadrado);
+            }
+            if(getArguments().getInt(ARG_SECTION_NUMBER) == 4){
+                mDescriptionTv.setText("Rostro Triángulo Invertido");
+                mImageViewTv.setImageResource(R.drawable.rostro_trian_inv);
             }
 
+            return rootView;
+        }
+    }
 
+    /**
+     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+     * one of the sections/tabs/pages.
+     */
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            // getItem is called to instantiate the fragment for the given page.
+            // Return a PlaceholderFragment (defined as a static inner class below).
+            return SelecRostroV1.PlaceholderFragment.newInstance(position + 1);
+        }
+
+        @Override
+        public int getCount() {
+            // Se muestran 4 paginas, correspondientes al nro de tipos de rostros
+            return 4;
         }
     }
 

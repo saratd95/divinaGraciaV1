@@ -13,7 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResultadosV1"></activity>
+        <activity android:name=".GuiaRostros"></activity>
+        <activity
+            android:name=".SelecRostroV2"
+            android:label="@string/title_activity_selec_rostro_v2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ResultadosV1" />
         <activity android:name=".SelecRostroV1" />
         <activity android:name=".Dudas" />
         <activity android:name=".PantallaPrincipal" />
@@ -26,7 +31,6 @@
             </intent-filter>
         </activity>
 
-        //el siguiente provider se incluye para la lectura de la camara
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -34,9 +38,8 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
+                android:resource="@xml/provider_paths" />
         </provider>
-
     </application>
 
 </manifest>

@@ -3,4 +3,7 @@
     <string name="descDudaDos">Puedes seleccionar las dos figuras que más se parezcan a tu cara,
         selecciona primero una y luego oprime el botón con el signo “+” para seleccionar una figura adicional.  </string>
     <string name="ayudaSub">This is an &lt;u>underline&lt;/u>.</string>
+    <string name="title_activity_selec_rostro_v2">SelecRostroV2</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
