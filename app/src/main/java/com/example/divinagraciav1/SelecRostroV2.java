@@ -21,6 +21,8 @@ import android.widget.TextView;
 
 public class SelecRostroV2 extends AppCompatActivity {
 
+    /**ESTA CLASE ERA SOLO DE PRUEBA, NO SE USA**/
+
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -113,19 +115,19 @@ public class SelecRostroV2 extends AppCompatActivity {
 
             //manejo de evento
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 1){
-                mDescriptionTv.setText("Rostro Redondo");
+                mDescriptionTv.setText("Rostro NO");
                 mImageViewTv.setImageResource(R.drawable.rostro_redo);
             }
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
-                mDescriptionTv.setText("Rostro Alargado");
+                mDescriptionTv.setText("Rostro NOO");
                 mImageViewTv.setImageResource(R.drawable.rostro_redo);
             }
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 3){
-                mDescriptionTv.setText("Rostro Cuadrado");
+                mDescriptionTv.setText("Rostro NOOO");
                 mImageViewTv.setImageResource(R.drawable.rostro_redo);
             }
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 4){
-                mDescriptionTv.setText("Rostro Triángulo Invertido");
+                mDescriptionTv.setText("Rostro NOOOO");
                 mImageViewTv.setImageResource(R.drawable.rostro_redo);
             }
 

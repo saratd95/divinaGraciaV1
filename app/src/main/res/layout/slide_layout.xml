@@ -8,71 +8,83 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
-    <ImageView
-        android:id="@+id/slide_image"
-        android:layout_width="295dp"
-        android:layout_height="298dp"
+        android:layout_width="421dp"
+        android:layout_height="500dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/conocer1"
-        android:contentDescription="img del inicio" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/slide_image"
+            android:layout_width="295dp"
+            android:layout_height="298dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:contentDescription="img del inicio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/conocer1" />
 
         <RelativeLayout
             android:id="@+id/relative"
             android:layout_width="match_parent"
-            android:layout_height="350dp">
+            android:layout_height="230dp">
+
             <ImageView
                 android:id="@+id/decoAretes"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="fitCenter"
-                android:src="@drawable/deco_aretes"/>
+                android:src="@drawable/deco_aretes" />
 
-    <LinearLayout
-        android:id="@+id/layoutContenidoTexto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
+            <LinearLayout
+                android:id="@+id/layoutContenidoTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/slide_heading"
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="MUESTRANOS \nTU ROSTRO"
-            android:textAlignment="center"
-            android:textColor="#540721"
-            app:fontFamily="@font/alegreya"
-            android:textStyle="bold"
-            android:textSize="8.5pt" />
+                <TextView
+                    android:id="@+id/slide_heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="MUESTRANOS \nTU ROSTRO"
+                    android:textAlignment="center"
+                    android:textColor="#540721"
+                    android:textSize="8.5pt"
+                    android:textStyle="bold"
+                    app:fontFamily="@font/alegreya" />
 
-        <TextView
-            android:id="@+id/slide_desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Toma una foto de tu rostro o selecciona una desde la galeria de tu dispositivo "
-            android:textAlignment="center"
-            android:layout_marginLeft="80dp"
-            android:layout_marginStart="80dp"
-            android:layout_marginRight="80dp"
-            android:layout_marginEnd="80dp"
-            android:textColor="#9B3E4A"
-            android:layout_marginTop="25dp"
-            android:textSize="7pt" />
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/slide_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="80dp"
+                    android:layout_marginLeft="80dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="80dp"
+                    android:layout_marginRight="80dp"
+                    android:text="Toma una foto de tu rostro o selecciona una desde la galeria de tu dispositivo "
+                    android:textAlignment="center"
+                    android:textColor="#9B3E4A"
+                    android:textSize="7pt" />
+            </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

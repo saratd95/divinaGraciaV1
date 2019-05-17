@@ -61,9 +61,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tipo de Rostro"
+                    android:text="Tu Tipo de Rostro"
                     android:alpha="0.4"/>
                 <TextView
+                    android:id="@+id/rostroSeleccionadoTraido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tipo de Rostro"
@@ -75,9 +76,24 @@
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@color/colorVinoT"
                     android:orientation="vertical">
+                    <Space
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp" />
                 </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnBuscar"
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:textColor="#ffffff"
+                    android:background="@drawable/boton_verde_oscuro"
+                    android:text="buscar"
+                    android:layout_marginBottom="10dp" />
+
+                <!--AREA DE BOTONES DE SELECION MOMENTO DIA Y OCASION
                 <LinearLayout
                     android:id="@+id/areaBotonesSup"
                     android:layout_width="match_parent"
@@ -146,7 +162,9 @@
                             android:text="formal"
                             android:layout_marginBottom="10dp"/>
                     </LinearLayout>
-                </LinearLayout>
+                </LinearLayout>-->
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -161,7 +179,8 @@
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/mujer_pantalla_ppal"/>
+                    android:src="@drawable/diamante_color"
+                    android:alpha="0.5"/>
                 <TextView
                     android:id="@+id/nombreProducto"
                     android:layout_width="150dp"

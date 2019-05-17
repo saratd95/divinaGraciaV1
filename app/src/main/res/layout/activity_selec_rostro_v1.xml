@@ -62,8 +62,8 @@
                     android:id="@+id/btnCargarImg"
                     android:layout_width="280dp"
                     android:layout_height="40dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/boton_vinot"
                     android:text="CARGAR FOTO"
                     android:textColor="#FFFFFF"
@@ -102,6 +102,22 @@
 
             </RelativeLayout>
 
+            <Button
+                android:id="@+id/btnAgregarRostro"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/boton_vinot"
+                android:text="+"
+                android:textColor="#FFFFFF"
+                android:onClick="onclickCargar"/>
+            <TextView
+                android:id="@+id/rostroSeleccionado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="rostro seleccionado" />
+
         </LinearLayout>
     </ScrollView>
 
@@ -129,7 +145,8 @@
             android:layout_marginBottom="10dp"
             android:background="@drawable/boton_verdeosc_borde"
             android:text="LISTO"
-            android:textColor="@color/colorVerdeOsc" />
+            android:textColor="@color/colorVerdeOsc"
+            android:onClick="eventoBtnListo"/>
 
         <LinearLayout
             android:id="@+id/botonesInferiores"

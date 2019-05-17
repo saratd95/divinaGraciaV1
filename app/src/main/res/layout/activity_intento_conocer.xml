@@ -9,12 +9,15 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/slideViewPager"
-        android:layout_width="match_parent"
+        android:layout_width="492dp"
         android:layout_height="500dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </android.support.v4.view.ViewPager>
@@ -41,8 +44,8 @@
             android:background="#B9545C"
             android:layout_marginBottom="10dp"
             android:text="EMPEZAR"
-            android:textColor="#8E2F3F"
-            android:textSize="5pt"
+            android:textColor="#ffffff"
+            android:textSize="6pt"
             />
 
     </LinearLayout>

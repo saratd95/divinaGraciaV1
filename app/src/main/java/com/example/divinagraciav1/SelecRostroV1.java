@@ -58,6 +58,11 @@ public class SelecRostroV1 extends AppCompatActivity {
     TextView txt_cambiarFoto;
     Button btn_listo;
 
+    //para listado de opciones a seleccionar de rostro en un alertdialog
+    String[] listItems;
+    Button addRostroBtn;
+    TextView nombreRostroSelec;
+
     /******************
      ** COSAS NUEVAS **
      ******************/
@@ -94,18 +99,47 @@ public class SelecRostroV1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_selec_rostro_v1);
-        /*************************************************************
-         ********************** CODIGO ORIGINAL **********************
-         *************************************************************/
+
+        nombreRostroSelec=(TextView) findViewById(R.id.rostroSeleccionado);
 
         /***
          * Eventos de los botones
          ***/
-        btn_listo=(Button) findViewById(R.id.btnListo);
+        addRostroBtn=(Button) findViewById(R.id.btnAgregarRostro);;
+        //tut para alertDialog con opciones y que la opc se muestre https://www.youtube.com/watch?v=Loj05QkHSSA
+        addRostroBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //crear lista de opciones
+                listItems=new String[]{"Rostro Redondo","Rostro Alargado","Rostro Cuadrado","Rostro Triángulo Invertido"};
+                AlertDialog.Builder mBuilder= new AlertDialog.Builder(SelecRostroV1.this);
+                mBuilder.setTitle("Selecciona tu tipo de rostro");
+                //mBuilder.setIcon(); icono que saldria al lado del titulo
+                mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        nombreRostroSelec.setText(listItems[i]);
+                        dialogInterface.dismiss();
+                    }
+                });
+                mBuilder.setNeutralButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                //mostrar alertDialog
+                AlertDialog mDialog= mBuilder.create();
+                mDialog.show();
+            }
+        }); //cierra onClickListener del boton addRostroBtn
+
+
+        /**btn_listo=(Button) findViewById(R.id.btnListo);
         btn_listo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 startActivity(new Intent(SelecRostroV1.this,ResultadosV1.class));}
-        });
+        });**/
         txt_ayuda = (TextView) findViewById(R.id.txtAyuda);
         txt_cambiarFoto=(TextView) findViewById(R.id.txtCambiarFoto);
         String text="Ayuda";
@@ -171,6 +205,19 @@ public class SelecRostroV1 extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
     }//cierra OnCreate
+
+
+    //tut mandar parametros de un activity a otro https://www.youtube.com/watch?v=M76NNP-U2gA
+    public void eventoBtnListo(View view){
+        //generar instancia a una intencion, se va a llamar el activity ResultadosV1
+        Intent miIntent= new Intent(SelecRostroV1.this,ResultadosV1.class);
+        Bundle miBundle= new Bundle(); //este es el transporte del dato que se quiere mandar
+        //el primer dato del bundle, "nombreRostro" es el key que debe estar en el otro activity que va a recibir el dato
+        miBundle.putString("nombreRostro",nombreRostroSelec.getText().toString());
+        //puente para que pasen los datos
+        miIntent.putExtras(miBundle);
+        startActivity(miIntent);
+    }//cierra eventoBtnListo
 
     private boolean validaPermisos() {
 
@@ -399,6 +446,8 @@ public class SelecRostroV1 extends AppCompatActivity {
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 1){
                 mDescriptionTv.setText("Rostro Redondo");
                 mImageViewTv.setImageResource(R.drawable.rostro_redo);
+                //RostroV1 r= new RostroV1();
+                //r.setNombreRostro(mDescriptionTv);
             }
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 2){
                 mDescriptionTv.setText("Rostro Alargado");
@@ -440,6 +489,7 @@ public class SelecRostroV1 extends AppCompatActivity {
             return 4;
         }
     }
+
 
 
 
